@@ -25,6 +25,7 @@ BASICS
       -  BOOT LOADER IN ACTION ---------------
       - <img width="503" height="269" alt="image" src="https://github.com/user-attachments/assets/6faf9ce3-95ce-41a6-aebb-b0fb2d033bf0" />
       = BIOS / MBR(master boot record) size 512bytes.
+
 Second-stage bootloader (/boot) → Shows splash screen/boot menu → User selects OS/kernel → Bootloader loads compressed kernel (vmlinuz) + initramfs into RAM → Kernel starts and uncompresses itself → Kernel detects hardware (CPU, RAM, storage, buses) → Kernel initializes built-in device drivers → Control passes to user-space (init/systemd)
 
 
