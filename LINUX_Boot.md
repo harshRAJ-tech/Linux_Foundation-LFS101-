@@ -25,50 +25,7 @@ BASICS
       -  BOOT LOADER IN ACTION ---------------
       - <img width="503" height="269" alt="image" src="https://github.com/user-attachments/assets/6faf9ce3-95ce-41a6-aebb-b0fb2d033bf0" />
       = BIOS / MBR(master boot record) size 512bytes.
-+--------------------------------------------------------------+
-|               SECOND STAGE BOOT LOADER (in /boot)            |
-+--------------------------------------------------------------+
-                 |
-                 v
-+--------------------------------------------------------------+
-|   1. Displays splash screen / boot menu                      |
-|      - User selects OS                                       |
-|      - User selects kernel version                           |
-+--------------------------------------------------------------+
-                 |
-                 v
-+--------------------------------------------------------------+
-|   2. Loads selected kernel into RAM                          |
-|      - Bootloader finds vmlinuz (compressed kernel)          |
-|      - Loads initramfs/initrd (initial filesystem)           |
-+--------------------------------------------------------------+
-                 |
-                 v
-+--------------------------------------------------------------+
-|   3. Kernel begins execution                                 |
-|      - Kernel is compressed                                  |
-|      - First task: **Uncompress itself**                     |
-+--------------------------------------------------------------+
-                 |
-                 v
-+--------------------------------------------------------------+
-|   4. Kernel detects system hardware                          |
-|      - CPU, RAM, storage, buses                              |
-|      - Identifies device controllers                         |
-+--------------------------------------------------------------+
-                 |
-                 v
-+--------------------------------------------------------------+
-|   5. Kernel initializes device drivers                       |
-|      - Built-in drivers                                      |
-|      - Loads essential modules (if using initramfs)          |
-+--------------------------------------------------------------+
-                 |
-                 v
-+--------------------------------------------------------------+
-|   SYSTEM IS NOW READY → moves to user-space (init/systemd)   |
-+--------------------------------------------------------------+
+Second-stage bootloader (/boot) → Shows splash screen/boot menu → User selects OS/kernel → Bootloader loads compressed kernel (vmlinuz) + initramfs into RAM → Kernel starts and uncompresses itself → Kernel detects hardware (CPU, RAM, storage, buses) → Kernel initializes built-in device drivers → Control passes to user-space (init/systemd)
 
-        
 
       
